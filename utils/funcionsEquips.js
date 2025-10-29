@@ -18,7 +18,7 @@ const getAnyFundacio = (unEquipObj)=>{
     //implementeu-ho
 }
 
-//obtinc l'any de fundació (intFormedYear)
+//obtinc El nom de l'estadi (strStadium)
 const getNomEstadi = (unEquipObj)=>{
     //implementeu-ho
 }
