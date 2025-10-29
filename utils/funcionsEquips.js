@@ -8,8 +8,8 @@ const getObjEquip = (nomEquip)=> {
     //imprementeu-ho
 }
 
-//a partir d'un obj amb les dades d'un equip, obtinc la imatge (strTeamShort+"png")
-const getFileNameImatgeEscut = (unEquipObj)=>{
+//a partir d'un obj amb les dades d'un equip, obtinc la imatge de l'escut (strBadge)
+const getUrlImatgeEscut = (unEquipObj)=>{
     //implementeu-ho
 }
 
