@@ -1,9 +1,9 @@
 import { React, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, KeyboardAvoidingView } from 'react-native';
 import InfoPartido from './components/infoPartido';
 import { Searchbar } from 'react-native-paper';
-
+import MostrarError from './components/mostrarError';
 const App = () => {
 
   const partidos = [
@@ -22,32 +22,35 @@ const App = () => {
     <View style={styles.container}>
       <StatusBar style="auto" />
 
-      <Searchbar
-        placeholder='Buscar...'
-        onChangeText={(newText) => setText(newText)}
-        value={text}
-        style={styles.bar}
-        theme={{ colors: { onSurfaceVariant: "green" } }}
-        placeholderTextColor="green"
-        iconColor='green'
-      />
-
+      <KeyboardAvoidingView>
+        <Searchbar
+          placeholder='Buscar...'
+          onChangeText={(newText) => setText(newText)}
+          value={text}
+          style={styles.bar}
+          theme={{ colors: { onSurfaceVariant: "green" } }}
+          placeholderTextColor="green"
+          iconColor='green'
+        />
+     
       <Text style={styles.titol}>Llistat de partits:</Text>
 
-      <FlatList
-        data={filtroEquipos}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => (
-          <InfoPartido
-            local={item.local}
-            visitante={item.visitante}
-            hora={item.hora}
-            estadio={item.estadio}
-            arbitro={item.arbitro}
-          />
-        )}
-      />
-     
+      {filtroEquipos.length == 0 ? <MostrarError />
+        : <FlatList
+          data={filtroEquipos}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={({ item }) => (
+            <InfoPartido
+              local={item.local}
+              visitante={item.visitante}
+              hora={item.hora}
+              estadio={item.estadio}
+              arbitro={item.arbitro}
+            />
+          )}
+        />
+      }
+       </KeyboardAvoidingView>
     </View>
   );
 };
