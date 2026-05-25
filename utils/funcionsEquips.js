@@ -51,6 +51,7 @@ export const getFitxaEquip = (unEquipObj) => {
         escudo: unEquipObj.strBadge,
         anyoFun: unEquipObj.intFormedYear,
         estadio: unEquipObj.strStadium,
+        capacidad: unEquipObj.intStadiumCapacity
     })
 }
 
