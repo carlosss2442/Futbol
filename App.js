@@ -15,6 +15,9 @@ const App = () => {
 
   const [text, setText] = useState("");
 
+  const filtroEquipos = partidos.filter((elem) => elem.local.toLocaleLowerCase().includes(text.toLocaleLowerCase()) || elem.visitante.toLocaleLowerCase().includes(text.toLocaleLowerCase()));
+
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -32,7 +35,7 @@ const App = () => {
       <Text style={styles.titol}>Llistat de partits:</Text>
 
       <FlatList
-        data={partidos}
+        data={filtroEquipos}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
           <InfoPartido
@@ -44,6 +47,7 @@ const App = () => {
           />
         )}
       />
+     
     </View>
   );
 };
@@ -65,7 +69,7 @@ const styles = StyleSheet.create({
 
   bar: {
     width: '100%',
-    alignSelf: 'center',
+    alignItems: 'center',
     backgroundColor: 'yellow',
     borderRadius: 15,
   },
