@@ -4,7 +4,7 @@ const dades = file.default.equips;//dades és un array d'equips, ara
 
 // A partir d'un nom d'un equip ('Valencia', 'Levante', 'Barcelona', ... ), 
 // obtinc l'objecte d'eixe equip amb totes seues dades.
-const getObjEquip = (nomEquip) => {
+export const getObjEquip = (nomEquip) => {
     //imprementeu-ho
     return (dades.filter(ele => ele.strTeam == nomEquip));
 }
@@ -44,7 +44,7 @@ console.log(getNomEquip(equipo[0])); */
 
 //obtinc la fitxa de l'equip.
 //La fitxa consisteix en un objecte amb els atributs: nom,imatgeEscut,anyFundacio,estadi
-const getFitxaEquip = (unEquipObj) => {
+export const getFitxaEquip = (unEquipObj) => {
     //implementeu-ho
     return ({
         nombre: unEquipObj.strTeam,

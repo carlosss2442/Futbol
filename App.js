@@ -1,6 +1,7 @@
 import {React, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import InfoEquip from './components/infoEquip';
 const App = () => {
 
 
@@ -11,7 +12,7 @@ const App = () => {
       <StatusBar style="auto" />
       <Text style={styles.titol}>Llistat de partits:</Text>
       <View style={{flex:0.25}}>
-        <Text style={{fontSize:18}}>Valencia</Text>
+        <InfoEquip nom="Barcelona"></InfoEquip>
       </View>
     </View>
   );
