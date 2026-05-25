@@ -46,6 +46,10 @@ const getLigaEquipo = (unEquipObj) => {
     return ([unEquipObj.strLeague, unEquipObj.strLeague2, unEquipObj.strLeague3, unEquipObj.strLeague4])
 }
 
+const getCapacidad = (unEquipObj) => {
+    return unEquipObj.intStadiumCapacity
+}
+
 //obtinc la fitxa de l'equip.
 //La fitxa consisteix en un objecte amb els atributs: nom,imatgeEscut,anyFundacio,estadi
 export const getFitxaEquip = (unEquipObj) => {
@@ -55,7 +59,8 @@ export const getFitxaEquip = (unEquipObj) => {
         escudo: getUrlImatgeEscut(unEquipObj),
         anyoFun: getAnyFundacio(unEquipObj),
         estadio: getNomEstadi(unEquipObj),
-        capacidad: getLigaEquipo(unEquipObj),
+        capacidad: getCapacidad(unEquipObj),
+        competiciones: getLigaEquipo(unEquipObj)
 
     })
 }
