@@ -1,4 +1,4 @@
-{ 
+{
   "equips": [
     {
       "idTeam": "133725",
@@ -197,7 +197,7 @@
       "strEquipment": "https://r2.thesportsdb.com/images/media/team/equipment/i9h3ku1678724226.png",
       "strYoutube": "www.youtube.com/elcheclubfutbolsad",
       "strLocked": "unlocked"
-    },    
+    },
     {
       "idTeam": "133733",
       "idESPN": "84",
@@ -395,7 +395,8 @@
       "strEquipment": "https://r2.thesportsdb.com/images/media/team/equipment/66115o1687895272.png",
       "strYoutube": "www.youtube.com/c/GironaFC",
       "strLocked": "unlocked"
-    },{
+    },
+    {
       "idTeam": "133740",
       "idESPN": "102",
       "idAPIfootball": "533",
@@ -460,7 +461,58 @@
       "strEquipment": "https://r2.thesportsdb.com/images/media/team/equipment/4yd3oj1687896914.png",
       "strYoutube": "",
       "strLocked": "unlocked"
+    },
+    {
+      "idTeam": "133741",
+      "idESPN": "243",
+      "idAPIfootball": "536",
+      "intLoved": "6",
+      "strTeam": "Sevilla",
+      "strTeamAlternate": "Sevilla FC",
+      "strTeamShort": "SEV",
+      "intFormedYear": "1890",
+      "strSport": "Soccer",
+      "strLeague": "Spanish La Liga",
+      "idLeague": "4335",
+      "strLeague2": "Copa del Rey",
+      "idLeague2": "4483",
+      "strLeague3": "UEFA Europa League",
+      "idLeague3": "4481",
+      "strLeague4": "UEFA Champions League",
+      "idLeague4": "4480",
+      "strLeague5": "",
+      "idLeague5": null,
+      "strLeague6": "",
+      "idLeague6": null,
+      "strLeague7": "",
+      "idLeague7": null,
+      "strDivision": null,
+      "idVenue": "19022",
+      "strStadium": "Estadio Ramón Sánchez-Pizjuán",
+      "strKeywords": "Los Nervionenses",
+      "strRSS": "",
+      "strLocation": "Sevilla, Spain",
+      "intStadiumCapacity": "43883",
+      "strWebsite": "www.sevillafc.es",
+      "strFacebook": "www.facebook.com/sevillafc",
+      "strTwitter": "twitter.com/SevillaFC",
+      "strInstagram": "www.instagram.com/sevillafc",
+      "strDescriptionES": "El Sevilla Fútbol Club es un club de fútbol español organizado como sociedad anónima deportiva. Tiene su sede en Sevilla, Andalucía, y actualmente juega en la Primera División de España. Fue fundado el 25 de enero de 1890, siendo uno de los clubes más antiguos del fútbol español. Disputa sus partidos como local en el Estadio Ramón Sánchez-Pizjuán, con capacidad para más de 43 000 espectadores.\r\n\r\nEl Sevilla FC es uno de los clubes más exitosos de España y el más laureado de la UEFA Europa League, competición que ha ganado en múltiples ocasiones. También ha conquistado títulos nacionales como La Liga, la Copa del Rey y la Supercopa de España.",
+      "strColour1": "#ffffff",
+      "strColour2": "#d00027",
+      "strColour3": "",
+      "strGender": "Male",
+      "strCountry": "Spain",
+      "strBadge": "https://r2.thesportsdb.com/images/media/team/badge/sevilla.png",
+      "strLogo": "https://r2.thesportsdb.com/images/media/team/logo/sevilla_fc.png",
+      "strFanart1": "https://r2.thesportsdb.com/images/media/team/fanart/sevilla1.jpg",
+      "strFanart2": "https://r2.thesportsdb.com/images/media/team/fanart/sevilla2.jpg",
+      "strFanart3": "https://r2.thesportsdb.com/images/media/team/fanart/sevilla3.jpg",
+      "strFanart4": "https://r2.thesportsdb.com/images/media/team/fanart/sevilla4.jpg",
+      "strBanner": "https://r2.thesportsdb.com/images/media/team/banner/sevilla_banner.jpg",
+      "strEquipment": "https://r2.thesportsdb.com/images/media/team/equipment/sevilla_kit.png",
+      "strYoutube": "www.youtube.com/user/sevillafc",
+      "strLocked": "unlocked"
     }
-
   ]
 }
