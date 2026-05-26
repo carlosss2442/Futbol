@@ -1,28 +1,51 @@
-
-import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
-import { getFitxaEquip, getObjEquip, } from '../utils/funcionsEquips';
+import React, { useState } from 'react';
+import { StyleSheet, View, Text, Image, ScrollView, Pressable } from 'react-native';
 import InfoEquip from './infoEquip';
+import { getFitxaEquip, getObjEquip, getNomEstadi } from '../utils/funcionsEquips';
+import Detalles from '../../futbol2/components/detalles';
 
 const InfoPartido = ({ local, visitante, hora, estadio = null, arbitro }) => {
-    const objectTeam = getObjEquip(local)
-    const ficha = getFitxaEquip(objectTeam[0]);
+    const equipLocal = getObjEquip(local);
+    const fitxa = getFitxaEquip(equipLocal[0]);
+    const [abrir, setAbrir] = useState(false);
 
+    const buton = () => {
+        if (abrir == false) {
+            setAbrir(true);
+        } else {
+            setAbrir(false)
+        }
+    }
     return (
-        <View style={styles.container}>
-            <View style={styles.estadioYhoraCont}>
-                <View style={{ flexDirection: 'row' }}>
-                    <InfoEquip nom={local}></InfoEquip>
-                    <InfoEquip nom={visitante}></InfoEquip>
-                </View>
-                <Text style={styles.text1}>{hora}</Text>
-                <Text style={styles.text1}>{estadio == null ? ficha.estadio : estadio} : {ficha.capacidad}</Text>
-                <Text style={styles.text1}>{arbitro}</Text>
-            </View>
 
+        <View style={styles.container}>
+            <View>
+                <View style={styles.estadioYhoraCont}> 
+                    <View style={{ flexDirection: 'row', }}>
+                        <InfoEquip nom={local}></InfoEquip>
+                        <InfoEquip nom={visitante}></InfoEquip>
+                    </View>
+                    <View style={styles.estadioYhoraText}>
+                        <Pressable
+                            onPress={() => buton()}
+                            style={{width:50}}
+                        >
+                            <Text style={{ fontWeight: 'bold', fontSize: 18 }}>+ info</Text>
+                        </Pressable>
+                        {abrir == true && (
+                            <Detalles
+                                local={local}
+                                visitante={visitante}
+                                hora={hora}
+                                estadio={estadio}
+                                arbitro={arbitro}
+                            />
+                        )}
+                    </View>
+                </View>
+            </View>
         </View>
     )
-
 }
 
 const styles = StyleSheet.create({
@@ -45,18 +68,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 10,
-        width: 25,
+        width: 250,
         height: 200,
         borderWidth: 2,
 
     },
     estadioYhoraCont: {
-        justifyContent: 'space-evenlys',
-        backgroundColor: '#d3d3d3',
+        justifyContent: 'space-evenly',  // tenías 'space-evenlys' con typo
+        backgroundColor: '#d3d3d3ea',
         borderRadius: 10,
-        width: 330,
-        height: 290,
-        borderWidth: 2,
+        width: '100%',      // ← en vez de 405
+        height: 300,     // ← elimina la altura fija
+        borderWidth: 1,
         alignContent: 'center',
         alignItems: 'center',
         padding: 5,

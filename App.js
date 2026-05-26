@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, FlatList, KeyboardAvoidingView } from 'react-na
 import InfoPartido from './components/infoPartido';
 import { Searchbar } from 'react-native-paper';
 import MostrarError from './components/mostrarError';
+import Detalles from './components/detalles';
 const App = () => {
 
   const partidos = [

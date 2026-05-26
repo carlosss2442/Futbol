@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
-import { getFitxaEquip, getObjEquip, } from '../utils/funcionsEquips';
-import { Tooltip } from 'react-native-paper';
+import { getFitxaEquip, getObjEquip } from '../utils/funcionsEquips';
 
 const InfoEquip = (props) => {
+  const [mostrarTooltip, setMostrarTooltip] = useState(false);
   const objectTeam = getObjEquip(props.nom);
-  const ficha = getFitxaEquip(objectTeam[0])
+  const ficha = getFitxaEquip(objectTeam[0]);
 
   const imatgesCompeticions = {
     "Spanish La Liga": require("../assets/imagenes/LL.png"),
@@ -18,6 +18,7 @@ const InfoEquip = (props) => {
     <View style={styles.container}>
       <View style={styles.ficha}>
         <View style={{ flexDirection: 'row' }}>
+
           <View style={styles.cuadro1}>
             {ficha.competiciones.map((item, index) => (
               <Image
@@ -27,36 +28,39 @@ const InfoEquip = (props) => {
               />
             ))}
           </View>
+
           <View style={styles.cuadro2}>
-             <Image
-                  source={{ uri: ficha.escudo }}
-                  style={{ width: "100%", height: "100%" }}
-                />
-           {/*  <Tooltip title={ficha.nuevoNombre}>
-              <TouchableOpacity>
-                <Image
-                  source={{ uri: ficha.escudo }}
-                  style={{ width: "100%", height: "100%" }}
-                />
-              </TouchableOpacity>
-            </Tooltip> */}
+            {/* Tooltip manual */}
+            {mostrarTooltip && (
+              <View style={styles.tooltip}>
+                <Text style={styles.tooltipText}>{ficha.nuevoNombre}</Text>
+              </View>
+            )}
+            <TouchableOpacity
+              onPress={() => setMostrarTooltip(!mostrarTooltip)}
+              onLongPress={() => setMostrarTooltip(true)}
+              onPressOut={() => setMostrarTooltip(false)}
+            >
+              <Image
+                source={{ uri: ficha.escudo }}
+                style={{ width: 80, height: 80 }}
+              />
+            </TouchableOpacity>
           </View>
+
         </View>
         <Text style={styles.titol}>{ficha.nombre}</Text>
         <Text style={{ fontSize: 20 }}>{ficha.anyoFun}</Text>
       </View>
     </View>
-  )
-
-
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     alignContent: 'center',
-
   },
   titol: {
     fontSize: 20,
@@ -73,11 +77,9 @@ const styles = StyleSheet.create({
     height: 150,
     borderWidth: 2,
     margin: 5,
-    padding: 5
+    padding: 5,
   },
-
   cuadro1: {
-
     alignContent: "center",
     borderColor: 'black',
     alignItems: 'center',
@@ -85,17 +87,29 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
-
   cuadro2: {
     alignContent: "center",
     borderColor: 'black',
     alignItems: 'center',
     width: 80,
     height: 80,
-    justifyContent: 'center'
-
-  }
+    justifyContent: 'center',
+  },
+  tooltip: {
+    position: 'absolute',
+    top: -35,
+    backgroundColor: 'rgba(0,0,0,0.75)',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 6,
+    zIndex: 999,
+  },
+  tooltipText: {
+    color: 'white',
+    fontSize: 12,
+  },
 });
+
 export default InfoEquip;
