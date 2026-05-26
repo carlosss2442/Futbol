@@ -60,8 +60,8 @@ export const getFitxaEquip = (unEquipObj) => {
         anyoFun: getAnyFundacio(unEquipObj),
         estadio: getNomEstadi(unEquipObj),
         capacidad: getCapacidad(unEquipObj),
-        competiciones: getLigaEquipo(unEquipObj)
-
+        competiciones: getLigaEquipo(unEquipObj),
+        nuevoNombre : unEquipObj.strTeamAlternate
     })
 }
 

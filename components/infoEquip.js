@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 import { getFitxaEquip, getObjEquip, } from '../utils/funcionsEquips';
-
+import { Tooltip } from 'react-native-paper';
 
 const InfoEquip = (props) => {
   const objectTeam = getObjEquip(props.nom);
@@ -28,7 +28,18 @@ const InfoEquip = (props) => {
             ))}
           </View>
           <View style={styles.cuadro2}>
-            <Image source={{ uri: ficha.escudo }} style={{ width: "100%", height: "100%" }} />
+             <Image
+                  source={{ uri: ficha.escudo }}
+                  style={{ width: "100%", height: "100%" }}
+                />
+           {/*  <Tooltip title={ficha.nuevoNombre}>
+              <TouchableOpacity>
+                <Image
+                  source={{ uri: ficha.escudo }}
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </TouchableOpacity>
+            </Tooltip> */}
           </View>
         </View>
         <Text style={styles.titol}>{ficha.nombre}</Text>
